@@ -1,0 +1,8 @@
+<?php
+
+return [
+	'baseApi' => 'BASE_API_URL',
+	'apiKey' => 'API_KEY',
+	'adminWebToken' => 'ADMIN_WEB_TOKEN',
+	'guzzleOpt' => ['verify' => false]
+];

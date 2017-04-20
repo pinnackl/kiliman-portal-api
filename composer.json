@@ -1,0 +1,10 @@
+{
+    "name": "pinnackl/kiliman-portal-api",
+    "description": "A web API to manage to the Kiliman portal with API Umbrella",
+    "require": {
+        "silex/silex": "^2.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "nubs/random-name-generator": "^2.1"
+    },
+    "license": "MIT"
+}

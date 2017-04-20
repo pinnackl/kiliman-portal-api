@@ -1,0 +1,30 @@
+{
+  "user": {
+    "id": "string",
+    "first_name": "string",
+    "last_name": "string",
+    "email": "string",
+    "website": "string",
+    "use_description": "string",
+    "registration_source": "string",
+    "throttle_by_ip": true,
+    "roles": "string",
+    "enabled": "string",
+    "api_key": "string",
+    "api_key_hides_at": "2017-04-20T13:32:58.588Z",
+    "api_key_preview": "string",
+    "email_verified": true,
+    "registration_ip": "string",
+    "registration_user_agent": "string",
+    "registration_referer": "string",
+    "registration_origin": "string",
+    "created_at": "2017-04-20T13:32:58.589Z",
+    "creator": {
+      "username": "string"
+    },
+    "updated_at": "2017-04-20T13:32:58.589Z",
+    "updater": {
+      "username": "string"
+    }
+  }
+}
