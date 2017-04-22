@@ -23,11 +23,10 @@ $toController = function($shortClass, $shortMethod)
 /**
  * API backend API
  */
-// $app->post('/api/create', $toController('KilimanApi', 'create'));
+$app->post('/api/create', $toController('KilimanApi', 'create'));
 $app->get('/apis', $toController('KilimanApi', 'list'));
 $app->get('/api/show/{id}', $toController('KilimanApi', 'show'));
-// $app->put('/api/update', $toController('KilimanApi', 'update'));
-// $app->delate('/api/delate', $toController('KilimanApi', 'delate'));
+$app->put('/api/update/{id}', $toController('KilimanApi', 'update'));
 
 /**
  * User API
@@ -35,7 +34,13 @@ $app->get('/api/show/{id}', $toController('KilimanApi', 'show'));
 $app->post('/user/create', $toController('KilimanUser', 'create'));
 $app->get('/users', $toController('KilimanUser', 'list'));
 $app->get('/user/show/{id}', $toController('KilimanUser', 'show'));
-// $app->put('/api/update', $toController('KilimanApi', 'update'));
-// $app->delate('/api/delate', $toController('KilimanApi', 'delate'));
+$app->put('/user/update/{id}', $toController('KilimanUser', 'update'));
+
+/**
+ * Config API
+ */
+// FIXME : Fix those request
+// $app->post('/config/publish', $toController('KilimanConfig', 'publish'));
+// $app->get('/config/changes', $toController('KilimanConfig', 'changes'));
 
 $app->run();
