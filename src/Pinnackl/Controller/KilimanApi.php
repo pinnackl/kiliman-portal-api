@@ -101,9 +101,37 @@ class KilimanApi
         return $response;
     }
 
-    public function updateAction(Request $request, \Silex\Application $app)
+    public function updateAction(Request $request, \Silex\Application $app, $id)
     {
-        return '';
+        // Get the helper
+        $helper = $app['helper'];
+
+        // Retreive the config
+        $baseApi = $helper->getConfig('baseApi');
+        $apiKey = $helper->getConfig('apiKey');
+        $adminWebToken = $helper->getConfig('adminWebToken');
+        $guzzleOpt = $helper->getConfig('guzzleOpt');
+
+        // Handle the POST request
+        $data = $request->getContent();
+
+        // Make the request to the Umbrella API
+        $client = new Client($guzzleOpt);
+
+        // Set headers
+        $res = $client->request('PUT', $baseApi . '/apis/' . $id . '.json', [
+            'headers'       => [
+                'content-type' => 'application/json',
+                'X-Api-Key' => $apiKey,
+                'X-Admin-Auth-Token' => $adminWebToken,
+            ],
+            'body'          => $data
+        ]);
+
+        // Send the Respnse
+        $response = new Response($res->getBody());
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 
     public function deleteAction(Request $request, \Silex\Application $app)
