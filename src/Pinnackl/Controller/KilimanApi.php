@@ -73,7 +73,7 @@ class KilimanApi
         return $response;
     }
 
-    public function showAction(Request $request, \Silex\Application $app)
+    public function showAction(Request $request, \Silex\Application $app, $id)
     {
         // Get the helper
         $helper = $app['helper'];
@@ -88,7 +88,7 @@ class KilimanApi
         $client = new Client($guzzleOpt);
 
         // Set headers
-        $res = $client->request('GET', $baseApi . '/apis', [
+        $res = $client->request('GET', $baseApi . '/apis/' . $id, [
             'headers' => [
                 'X-Api-Key' => $apiKey,
                 'X-Admin-Auth-Token' => $adminWebToken,
